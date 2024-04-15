@@ -246,33 +246,33 @@ const validateInputs = () => {
     const password2Value = password2.value.trim();
 
     if(usernameValue === '') {
-        setError(username, 'Username is required');
+        setError(username, 'Tên người dùng là bắt buộc');
     } else if (usernameValue.length < 6 ) {
-        setError(username, 'Username must be at least 6 character.')
+        setError(username, 'Tên người dùng phải chứa ít nhất 6 ký tự.')
     }
     else {
         setSuccess(username);
     }
     if(emailValue === '') {
-        setError(email, 'Email is required');
+        setError(email, 'Email là bắt buộc');
     } else if (!isValidEmail(emailValue)) {
-        setError(email, 'Provide a valid email address');
+        setError(email, 'Cung cấp một địa chỉ email hợp lệ');
     } 
     else {
         setSuccess(email);
     }
     if(passwordValue === '') {
-        setError(password, 'Password is required');
+        setError(password, 'Mật khẩu là bắt buộc');
     } else if (passwordValue.length < 6 ) {
-        setError(password, 'Password must be at least 6 character.')
+        setError(password, 'Mật khẩu phải chứa ít nhất 6 ký tự.')
     }
     else {
         setSuccess(password);
     }
     if (password2Value === '') {
-setError(password2, 'Password is required');
+setError(password2, 'Mật khẩu là bắt buộc.');
 } else if (password2Value !== passwordValue) {
-setError(password2, "Password doesn't match"); 
+setError(password2, "Mật khẩu không khớp."); 
 }
 else {
         setSuccess(password2);
@@ -306,7 +306,7 @@ if(password.length<6 && password2.length<6){
   return;
 }
 if(username.length<6){
-  alert("Username must be at least 6 characters long.");
+  alert("Tên người dùng phải chứa ít nhất 6 ký tự.");
   return;
 }
 if(username==='' && email==='' && password==='' && password2===''){
@@ -314,14 +314,14 @@ if(username==='' && email==='' && password==='' && password2===''){
    }
 
    if (localStorage.getItem(username) !== null) {
-        alert("Username already exists.");
+        alert("Tên người dùng đã tồn tại.");
         return; 
     }
 
     for (const key of Object.keys(localStorage)) {
         const storedUser = JSON.parse(localStorage.getItem(key));
         if (storedUser.email === email) {
-            alert("Email already exists.");
+            alert("Email này đã tồn tại rồi.");
             return; 
         }
     }
@@ -336,13 +336,13 @@ if(username==='' && email==='' && password==='' && password2===''){
         localStorage.setItem(username, json); 
        }
        var user = { 
-  username: 'user123',
-  email: 'user456@gmail.com',
-  password: 'user123456'
+  username: 'nguyenhoanghieu',
+  email: 'hieu123@gmail.com',
+  password: '123456'
 }; 
 
 var json = JSON.stringify(user); 
-localStorage.setItem('user123', json);
+localStorage.setItem('nguyenhoanghieu', json);
 
 
 
